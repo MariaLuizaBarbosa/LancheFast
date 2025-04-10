@@ -8,6 +8,9 @@ use Livewire\WithPagination;
 
 class Index extends Component
 {
+    public $nome;
+    public $endereco;
+    public $telefone;
 
     use WithPagination;
 
@@ -19,6 +22,11 @@ class Index extends Component
         'perPage' => ['except' => 10],
     ];
 
+    protected $listeners = [
+        'abrirModalEdicao',
+        'cadastroAtualizada' => 'render'
+    ];
+
     public function render()
     {
         $clientes = Cliente::where('nome', 'like', "%{$this->search}%")
@@ -27,6 +35,16 @@ class Index extends Component
         ->paginate($this->perPage);
 
         return view('livewire.cliente.index', compact('clientes'));
+    }
+
+    public function abrirModalVisualizar ($clienteId){
+        $cliente = Cliente::find($clienteId);
+
+        if($cliente){
+            $this->nome = $cliente->nome;
+            $this->endereco = $cliente->endereco;
+            $this->telefone = $cliente->telefone;
+        }
     }
 
     public function delete($id){

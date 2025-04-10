@@ -15,11 +15,11 @@ class Cliente extends Model
         'telefone',
         'cpf',
         'email',
-        'senha'
+        'password'
     ];
 
     protected $hidden = [
-        'senha',
+        'password',
         'remember_token'
     ];
 
