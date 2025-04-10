@@ -5,27 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Cliente extends Model
+class Produto extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'nome',
-        'endereco',
-        'telefone',
-        'cpf',
-        'email',
-        'senha'
-    ];
-
-    protected $hidden = [
-        'senha',
-        'remember_token'
+        'ingredientes',
+        'valor',
+        'imagem,'
     ];
 
     public function pedidos()
     {
-        //return $this->hasMany(Pedido::class);
+        //return $this->belongsToMany(Pedido::class)->withPivot('quantidade', 'valor_unitario');
     }
-
 }
