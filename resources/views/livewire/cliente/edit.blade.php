@@ -10,10 +10,12 @@
     {{-- codigo para não abrir modal --}}
 
     <div class="col-md-6 mx-auto">
-        <div class="card bg-warning" >
+        <br>
+        <br>
+        <div class="card" style="background-color: rgb(150, 111, 186)">
             <h5 class="card-header fw-bold text-center" $font-family="sans-serif">Editar Cliente</h5>
             <div class="card-body">
-                <form wire:submit.prevent="store">
+                <form wire:submit.prevent="salvar">
                     <div class="mb-3">
                         <label for="nome" class="form-label fw-bold text-center">Nome</label>
                         <input type="text" class="form-control" id="nome" name="nome" wire:model.defer="nome">
@@ -32,7 +34,7 @@
                     </div>
 
                     <div class="mb-3 text-center">
-                        <button type="submit" class="btn btn-success">Atualizar</button>
+                        <button type="submit" class="btn btn-success" wire:click="salvar">Salvar</button>
                     </div>
 
                 </form>

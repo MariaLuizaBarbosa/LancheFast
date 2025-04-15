@@ -8,7 +8,9 @@
     @endif
 
     <div class="col-md-6 mx-auto">
-        <div class="card bg-success" >
+        <br>
+        <br>
+        <div class="card" style="background-color: rgb(178, 139, 215)" >
             <h5 class="card-header fw-bold text-center" $font-family="sans-serif">Cadastro de Usuário</h5>
             <div class="card-body">
                 <form wire:submit.prevent="store">
@@ -48,7 +50,7 @@
                     </div>
 
                     <div class="mb-3 text-center">
-                        <button type="submit" class="bg-secondary-subtle">Cadastrar</button>
+                        <button type="submit" style="background-color: rgb(90, 231, 130)">Cadastrar</button>
                     </div>
 
                 </form>
